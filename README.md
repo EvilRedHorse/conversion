@@ -16,7 +16,7 @@ essentially we split the file into streams, convert the a video to a base mpeg2 
 speedup my commits
 
 # dec-hex-txt folder and *.sh
-some simple scripts for when I need to convert between dec <-> hex -> txt
+some simple scripts for when I need to convert between dec <-> hex <-> txt
 
 # Pi folder and Pi.sh
 simple one liner to calculate Pi - takes scale (decimal places) as input

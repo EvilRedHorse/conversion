@@ -3,7 +3,7 @@
 printf "Hex to convert to Text:\nHex:   "
 read HEX
 printf "Text:   "
-echo $HEX |  xxd -r -c 256 -ps
+printf $((16#$HEX))
 
 # move down 1 line at end
 printf "\n"
