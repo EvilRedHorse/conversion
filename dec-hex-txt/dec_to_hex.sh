@@ -1,13 +1,10 @@
-#! /usr/bin/sh
+#! /bin/bash --posix
+# Description: converts decimal input
+#              outputs json with dec and hex with error as true or false
 
-printf "Dec to convert to Hex:\nDec:   "
-read DEC
-printf "Hex:   "
-#echo $DEC |  xxd -r -c 256 -ps
+re='^[0-9]+$'
+if ! [[ $1 =~ $re ]] ; then
+   echo "{\"error\": \"true\"}" >&2; exit 1
+fi
 
-
-echo 'obase=16;'$DEC | bc
-
-# move down 1 line at end
-printf "\n"
-exit 0
+echo "{\"dec\":$1, \"hex\":\"$(echo 'obase=16;'$1 | bc)\", \"error\":\"false\"}" >&2; exit 0
